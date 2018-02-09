@@ -1,0 +1,21 @@
+
+include 'bcapi' //标准api
+include 'memsvc' //pos记账通过节点
+include 'peer' //普通节点
+include 'xdn'  //pbft下的投票节点
+include 'p22p' //优化的点对点协议，将来申请专利（logN算法）
+include 'chains:Slicer' //链的代码,1+9条链
+include 'backend:bc_mysql' //落地mysql模式（高可靠多机）
+include 'backend:bc_redis' //快速节点redis模式，待完善开发
+include 'backend:bc_oracle' //统计查询节点oracle模式，待完善开发
+include 'ecrypto'   // 标准的加密库
+include 'vms:dockervm' // 智能合约，docker模式
+include 'vms:evm'   // 智能合约，evm模式，支持erc20等方式发币(待完善)
+include 'consensus:cs_api'  //共识组件：共识api
+include 'consensus:cs_sync' //共识组件：单节点
+include 'consensus:cs_raft' //共识组件：raft共识
+include 'consensus:cs_pbft' //共识组件：pbft共识
+include 'consensus:cs_dpos' //共识组件：dpos共识
+include 'consensus:cs_dag' //共识组件：dag共识,onging....(fork from iota)
+
+rootProject.name = 'mainchain'

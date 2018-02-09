@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package org.fc.brewchain.xdn.pbgens;
+
+enum PModule {
+	XDN = 0;
+};
+enum PCommand {
+	GET = 0; //获取链上URL的hash值
+	UPD = 1; //请求更新链上URL的hash值
+	SET = 2; //节点hash值更新
+};
+
+message PMURLPair{//url的内容对
+	string url_base64 = 1;//url的base64编码，算法:base64(http://abc.com/1.html)
+	string content_hash = 2;//内容的hash值，有cdn那边agent获取
+	int64  calc_time = 3;//内容hash计算的时间
+	string hash = 4;//内容的Hash值，
+	string cb_refs = 5;//附带回来的内容
+	string ret_code = 6;//返回编码（0000-表示成功，1000-表示内容超过长度限制）
+}
+
+message PMFetch{
+	string callback_base64 = 1;//回掉函数
+	repeated string url_base64 = 2;//地址列表
+	string cb_refs = 5;//需要附带回来的内容
+	int64 max_bytes_size = 6;//url最大的字节长度
+}
+
+message PSURLHashGet {	//获取url的内容哈值值
+	repeated string url_base64 = 1;//请求的url
+	string group = 2;//机构号,默认为default
+	string userid = 3;//用户编码,默认为default
+	string appkey = 4;//appkey
+	int64 max_bytes_size = 20;//最大长度限制(字节)
+}
+
+message PRetURLHashGet //链上数据结果
+{
+	string code = 1; //err_code
+	string msg = 2; //操作参数
+	repeated PMURLPair url = 10;
+}
+
+
+message PSURLHashCallback {	//获取url的内容哈值值
+	repeated PMURLPair url = 10;
+}
+
+message PRetURLHashCallback //操作数据结果
+{
+	bool success = 1; //err_code
+	string message = 2; //操作参数
+}
+
+message PSURLUpdate {	//从portal那边请求链上更新数据
+	repeated string url_base64 = 10;
+	int32 timeout = 11;
+	int32 try_times = 12;
+	
+	string group = 13; //所属的机构
+	string userid = 14; //用户ID
+	int32 recalc_timesec=15;//定时任务里面重新计算的时间间隔（秒,如果是-1则停止刷新,默认没有或者0就是1分钟刷新一次)
+	string appkey = 16;//appkey
+	
+	int64 max_bytes_size = 20;//最大长度限制(字节)
+}
+
+message PRetURLUpdate //返回请求结果
+{
+	string code = 1; //err_code
+	string msg = 2; //操作参数
+	repeated PMURLPair url = 10;//里面包含了url的hash值，如果链上有的话就返回，没有则可以轮训返回
+}
+
+

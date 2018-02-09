@@ -1,0 +1,92 @@
+syntax = "proto3";
+
+package org.fc.brewchain.memsvc;
+
+enum PWModule {
+	SVC = 0;
+};
+
+enum PWCommand {
+	LST = 0; //获取成员列表
+	INF = 1; //获取当前状态
+	PNW = 2; //新增一个peer节点
+	PGE = 3; //获取一个peer节点
+	PLS = 4; //获取所有节点信息
+	PPM = 5; //测试管理节点广播
+	PPP = 6; //测试记账节点广播
+};
+
+message PMMember //
+{
+	string id = 1;
+	string name = 2; //节点名称
+	string role = 3; //角色
+	repeated string peerURLs = 4; //成员ID
+	repeated string clientURLs = 5; //客户端url
+	bool isup = 6; //是否启动了
+}
+
+message PSMemReq //
+{
+	string memberid = 1; //memerdeid
+	string params = 2; //操作参数
+}
+
+message PRMemRes {
+	repeated PMMember members = 1; //节点列表
+	string retmsg = 2; //
+	int32 retcode = 3; //是否成功
+}
+
+message PMPeer //
+{
+	string nodeid = 1; //节点名称
+	string role = 2; //角色
+	string peerid = 3; //成员ID
+	string peeraddr = 4; //节点的地址
+	int32 peerport = 5; //节点的监听端口
+	string peertoken = 6; //节点的临时密码
+	int32 coreconn = 7; //连接数
+	int32 maxconn = 8; //最大连接数
+	string org = 9;//所属的机构
+	string auditstatus = 10;//状态
+}
+
+message PSPeerReq //
+{
+	PMPeer peer = 1; //peer
+	enum OP {
+		REG = 0; //注册
+		CONFIRM = 1; //通过
+		REJECT = 2; //拒绝
+		BLOCK = 3; //拉入黑名单
+		TOKENSET = 4; //更新token
+		UPDATE = 5; //更新所有信息
+	}
+	string params = 2; //操作参数
+	OP op = 3;
+}
+
+message PRPeerRes {
+	PMPeer peer = 1; //peer
+	string retmsg = 2; //
+	int32 retcode = 3; //是否成功
+}
+
+message PSPeerQuery //
+{
+	string nodeid = 1; //peernode
+	string org = 2;
+	string addr = 3;
+	string port = 4;
+
+	string param = 5;
+}
+
+message PRetPeerQuery {
+	repeated PMPeer peer = 1; //peer
+	string retmsg = 2; //
+	int32 retcode = 3; //是否成功
+}
+
+

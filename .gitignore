@@ -1,0 +1,9 @@
+build
+bin
+.gradle
+classes
+.cache
+.cache-*
+.DS_Store
+.DS_Store?
+.classpath

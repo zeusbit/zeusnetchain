@@ -1,0 +1,22 @@
+
+version = '2.0.0'
+repositories{
+	maven{ url "http://dl.bintray.com/ethereum/maven/"}
+}
+
+dependencies {
+	//	 testCompile 'junit:junit:4.12'
+	includeInJar "javax.transaction:jta:1.1"
+	compile 'com.google.guava:guava:19.0'
+	includeInJar ('org.scalikejdbc:scalikejdbc_2.11:2.5.1') { exclude module: "scala-library" }
+	includeInJar ("com.github.mauricio:mysql-async_2.11:0.2.21"){ exclude module: "scala-library" } 
+}
+
+jar {
+	manifest{
+		//		attributes( 'Spring-Context': 'applicationContext-common.xml, applicationContext-beans.xml')
+		attributes( 'Import-Ignore':'org.joda.time,org.spongycastle,com.google.protobuf,com.google.common,com.github.mauricio,io.netty.buffer,scalikejdbc,org.ethereum.crypto')
+		attributes( 'DynamicImport-Package': '*')
+		attributes( 'Import-Lib': 'lib')
+	}
+}

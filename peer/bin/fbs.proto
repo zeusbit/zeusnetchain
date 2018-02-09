@@ -1,0 +1,221 @@
+syntax = "proto3";
+
+package org.fc.brewchain.fbs.pbgens;
+
+enum PFBSModule {
+	FBS = 0;
+};
+enum PFBSCommand {
+	INF = 0; //获取当前状态
+	REG = 1; //注册用户
+	NEW = 2; //新建资产
+	VLD = 3; //校验资产信息
+	TRN = 4; //资产转让
+	LTX = 5 ;//查询交易
+	
+	//LST = 8; //获取用户所有资产
+};
+
+enum DigitMoneyType{
+	
+	FBC = 0;//泛融币
+	BTC = 1;//比特币
+	ETH = 2;//以太币
+	
+	TOKEN = 10;//其他
+
+}
+
+
+message PMFundInfo{//区块金融属性信息
+	double amount = 1;//金额
+	int64 count = 2;//数量
+	double total_fee = 3 ;//手续费
+	double net_fee = 4;//网络使用费
+	double discount = 5;//折扣
+	string uni_code = 6;//资产唯一编码
+	string alias = 8 ;//别名
+	string genis_address  = 10;//创始者,谁创建的？
+	string genis_org = 11;//创始机构
+
+	int64 	fbc_count=20;//本币数量
+	
+	DigitMoneyType dmt = 21;//货币类型
+	string  dmt_ename = 22;//货币英文名称,例如ETC,BTC等等
+
+	double	colored_btc = 30;//对应的btc的价值
+	double	colored_eth = 31;//对应的eth的价值
+	double	colored_xrp = 32;//对应的ripple的价值 
+}
+
+message PMBlockInfo{//区块信息
+	int64 height = 1;//高度
+	int32 status = 2;
+	int64 createtime = 3;
+	int64 updatetime = 4;
+	
+	string hash = 5;//hash值
+	
+}
+
+message PMAssetInfo {//区块资产信息
+	PMSignAddress address = 1;
+	string bc_txid = 2;//该资产对应的txid
+	PMFundInfo fund = 3;//
+	string alias = 4;//资产别名
+	string metadata = 5 [jstype = JS_NORMAL];//附言之类的扩展信息
+	PMFundInfo fbc_fund = 6;//泛融币信息
+	
+	PMBlockInfo bc_info = 7; //bc的信息
+}
+
+
+
+message PMContract{  //合约定义
+	string op_type  = 1;//合约引擎
+	string condition = 2;//执行条件
+	string scripts = 3;//执行内容
+	PMFundInfo fbc_coin = 4;//执行合约需要花费的泛融币
+	
+}
+
+
+message PMFullAddress {
+	string hex_addr = 1;//地址
+	string pki = 2;//私钥
+	string pub = 3;//公钥
+	string alias = 4;//地址别名
+	
+	string rpmd_hash = 5;//公钥匙hash
+	
+	string metadata = 10 [jstype = JS_NORMAL]; //metadata
+	string org = 11; //所属的机构
+	
+}
+
+message PMSignAddress {
+	string hex_addr = 1;//地址
+	string alias = 4;//地址别名
+	string rpmd_hash = 5;//公钥匙hash
+}
+
+
+message PMTransInfo {//资产交易信息,为了j每次只能转移一种类型的资金
+	PMSignAddress address = 1;
+	string bc_txid = 2;//针对转入的时候需要
+	PMFundInfo fund = 3;//需要修改的资金
+	string metadata = 5 [jstype = JS_NORMAL];//附言之类的扩展信息
+	PMFundInfo fbc_funds = 6;//泛融币信息
+}
+
+
+message PSRegistry //注册用户
+{
+	string user_id = 1; //user_id，不能重复
+	string metadata = 4 [jstype = JS_NORMAL]; //metadata
+	string org = 5; //所属的机构
+	int32  address_count = 6;//批量生成几个地址
+	string co_siger = 7;//签名校验字段
+	
+	string ver = 80;//版本，默认1.0.0
+}
+
+message PRetRegistry //返回注册用户
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	repeated PMFullAddress addrs = 3;//地址列表
+	PMAssetInfo fbc_asset = 5;//创建地址之后系统赠送的泛融资产，以后每次都需要用这个来进行交易
+	
+}
+
+message PSAssetCreate {//创建资产，实际上就是记录,只能创建一类资产
+	string trade_no = 1; //交易id
+	repeated PMSignAddress co_signers = 2;//签名地址,用注册时候的泛融币地址
+	string metadata = 3 [jstype = JS_NORMAL];//扩展新，json格式
+	string alias = 4;//别名
+	
+	string signed_code = 10;//签名字段
+	PMFundInfo fund = 20;//资产属性，只允许创建一个资产
+	PMContract scs = 30;//智能合约
+	
+	string ver = 80;//版本，默认1.0.0
+	
+}
+
+message PRetAssetCreate //
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	string bc_txid = 3;//对应的txid
+	PMAssetInfo asset = 4;//返回资产的信息
+	string raw_data = 5;//原始交易的数据
+}
+
+message PSAssetCheck {	//资产校验
+	string asset_address = 2;//资产的地址
+	string bc_txid = 3;//检查txid
+	
+}
+
+message PRetAssetCheck //资产校验结果返回
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+
+	PMAssetInfo asset = 3;//返回资产信息
+
+
+	string trade_no = 10; //交易id
+	repeated PMSignAddress co_signers = 12;//签名地址,用注册时候的泛融币地址
+	string signed_code = 20;//签名字段
+	PMContract scs = 30;//智能合约
+	string ver = 80;//版本，默认1.0.0
+
+	
+}
+
+message PSAssetTrans { //资产转让，支持混币模式，但是只允许一种币种的交易
+	string trade_no = 1;
+	string metadata = 5[jstype = JS_NORMAL];
+	string alias = 6;//交易别名
+	
+	repeated PMTransInfo inputs = 20;//上一组用户信息
+	repeated PMTransInfo outputs = 21;//下一组用户信息
+	repeated PMContract scs = 22;//智能合约
+	string signed_code = 30;//签名字段
+	string ver = 80;//版本，默认1.0.0
+	
+}
+
+message PRetAssetTrans //转让返回
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	string bc_txid = 3;//对应的txid
+	string raw_data = 4;//原始交易的数据
+}
+
+
+message PSGetTrans { //查询交易
+	string bc_txid = 1;
+	string ver = 80;//版本，默认1.0.0
+}
+
+message PRetGetTrans //转让返回
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+
+	string trade_no = 3;
+	string metadata = 5[jstype = JS_NORMAL];
+	string alias = 6;//交易别名
+	int64 block_height=8;//所在区块的高度
+	
+	repeated PMTransInfo inputs = 20;//上一组用户信息
+	repeated PMTransInfo outputs = 21;//下一组用户信息
+	 PMContract scs = 22;//智能合约
+	string signed_code = 30;//签名字段
+	
+}
+

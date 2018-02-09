@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package org.fc.brewchain.peer.pbgens;
+
+enum PModule {
+	PEE = 0;
+};
+
+enum PCommand {
+	INF = 0; //获取当前状态
+	VLD = 1; //节点校验
+};
+
+message PMPeer //
+{
+	string nodeid = 1; //节点名称
+	string role = 2; //角色
+	string peerid = 3; //成员ID
+	string peeraddr = 4; //节点的地址
+	int32 peerport = 5; //节点的监听端口
+	string peertoken = 6; //节点的临时密码
+	int32 coreconn = 7; //连接数
+	int32 maxconn = 8; //最大连接数
+	string org = 9; //所属的机构
+	string isup = 10; //是否已经链接进去了
+	string netstatus = 11; //节点审核状态
+}
+
+message PSPeerReq //
+{
+	PMPeer peerin = 1; //peerin check
+	string params = 2; //操作参数
+}
+
+message PRetPeerReq {
+	PMPeer peer = 1; //节点列表
+	string retmsg = 2; //
+	int32 retcode = 3; //是否成功
+}
+
+

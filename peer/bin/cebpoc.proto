@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package org.fc.brewchain.poc.pbgens;
+
+enum PPOCModule {
+	POC = 0;
+};
+enum PPOCCommand {
+	INF = 0; //获取当前状态
+	REG = 1; //注册
+	NEW = 2; //插入存证
+	MOD = 3; //更新存证
+	GET = 4; //获取存证
+	ADD = 5; //存证增加用户
+	LST = 6; //获取用户所有存证
+};
+
+message PSRegistry //
+{
+	string user_name = 1; //user_name
+	string password = 2; //password
+	string trade_no = 3; //trade_no
+	string metadata = 4; //metadata
+	string org = 5; //所属的机构
+}
+
+message PRetRegistry //
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	message PMData {
+		string address = 1;
+	}
+
+	PMData data = 3;
+}
+
+message PSEvidenceCreate {
+	string trade_no = 1; //节点列表
+	message PMSigner {
+		string address = 1;
+		string password = 2;
+	}
+
+	repeated PMSigner signers = 2;
+	string metadata = 3;
+}
+
+message PRetEvidenceCreate //
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	message PMData {
+		string bc_hash = 1;
+		string evidence_id = 2;
+	}
+
+	PMData data = 3;
+}
+
+message PSEvidenceModify {
+	string trade_no = 1; //节点列表
+	message PMSigner {
+		string address = 1;
+		string password = 2;
+	}
+
+	repeated PMSigner signers = 2;
+	string metadata = 3;
+	string evidence_id = 4;
+}
+
+message PRetEvidenceModify //
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	message PMData {
+		string bc_hash = 1;
+	}
+
+	PMData data = 3;
+}
+
+message PSEvidenceFind {
+	string evidence_id = 4;
+}
+
+message PRetEvidenceFind //
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	message PMData {
+		string evidence_id = 1;
+		string metadata = 2;
+		repeated string address = 3;
+	}
+
+	PMData data = 3;
+}
+
+message PSEvidenceAddUser {
+	string trade_no = 1;
+	string evidence_id = 2;
+	string address = 3;
+	string password = 4;
+	string metadata = 5;
+}
+
+message PRetEvidenceAddUser //
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	message PMData {
+		string bc_hash = 1;
+		string evidence_id = 2;
+	}
+
+	PMData data = 3;
+}
+
+message PSEvidenceFindAll {
+	string address = 1;
+	string password = 2;
+}
+
+message PRetEvidenceFindAll //
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	message PMData {
+		string evidence_id = 1;
+		string metadata = 2;
+		repeated string address = 3;
+	}
+
+	repeated PMData data = 3;
+}

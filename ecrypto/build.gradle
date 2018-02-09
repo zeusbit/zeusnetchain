@@ -1,0 +1,20 @@
+
+version = '3.0.0'
+repositories{
+	maven{ url "http://dl.bintray.com/ethereum/maven/"}
+}
+
+dependencies { 
+	//	 testCompile 'junit:junit:4.12'
+    includeInJar "com.madgag.spongycastle:core:1.54.0.0" // for SHA3 and SECP256K1
+    includeInJar "com.madgag.spongycastle:prov:1.54.0.0" // for SHA3 and SECP256K1
+	includeInJar 'org.ethereum:ethereumj-core:1.5.0-RELEASE'
+
+}
+
+jar {
+	manifest{
+		//		attributes( 'Spring-Context': 'applicationContext-common.xml, applicationContext-beans.xml')
+		attributes( 'Import-Ignore':'org.spongycastle,com.madgag.spongycastle')
+	}
+}

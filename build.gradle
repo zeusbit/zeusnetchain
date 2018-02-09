@@ -1,0 +1,31 @@
+
+buildscript {
+
+	dependencies { 
+		//classpath "osgi.zeusnet:ozn-gradle:3.3.0"
+	 }
+}
+
+//apply plugin: 'ozn'
+
+
+subprojects {
+	project.group='org.znc.mainchain'
+	
+	//apply plugin: 'zippo'
+    if(project.name!='bcapi') {
+    	dependencies {
+		//compile ("org.znc.mainchain:org.znc.mainchain.bcapi:3.3.0")
+	}
+    }
+
+
+	dependencies {
+
+		//compile ("org.znc.ofw:org.znc.ofw.oapi:3.3.0")
+	}
+
+	version = '3.3.0'
+
+	jar { manifest.attributes provider: 'org.znc.ofw' }
+}

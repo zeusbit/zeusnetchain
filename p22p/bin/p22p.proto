@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+package org.fc.brewchain.p22p.pbgens;
+import "google/protobuf/any.proto";
+
+enum PModule {
+	PZP = 0;
+};
+enum PCommand {
+	JIN = 0; //申请加入节点集群
+	SWX = 1; //获取节点的拓扑
+	SET = 2; //更新节点信息
+};
+
+message PMNodeInfo{
+	string node_name = 1;//节点
+	string protocol = 2;//节点链接支持的协议类型，tcp，http/https，udp，mq……
+	string address = 3;//地址
+	int32 port = 4;//端口
+	int64 startup_time = 5;//启动时间
+	string pub_key = 6;//该节点的公钥
+	int32 try_node_idx = 7;//节点的随机id
+	int32 node_idx = 10;//全网确定之后的节点id
+	string sign = 100;//对上述数据的签名结果
+}
+
+message PSJoin{//加入
+	PMNodeInfo  my_info = 1;
+	enum Operation{
+		MANU_DISCOVER = 0;//手动添加
+		NODE_CONNECT = 1;//节点请求连接
+	}
+	Operation op = 2;//操作类型
+}
+
+message PRetJoin{//加入的返回信息
+	int32 ret_code = 1;//返回
+	string ret_message = 2;//返回信息
+
+	repeated PMNodeInfo nodes = 4;//交换一下我知道的节点信息
+	
+	string sign = 100;//对上述数据的签名结果
+}
+
+message PBSwitchNodes{	//交换我所知道的节点信息
+	repeated PMNodeInfo  nodes = 1;//所有节点的信息
+	PMNodeInfo my_info = 2;
+	string sign = 100;//对上述数据的签名结果
+}
+
+enum PBFTStage{
+	PRE_PREPARE = 0;
+	PREPARE = 1;
+	COMMIT = 2;
+	REPLAY = 3;
+}
+
+message PVBase{
+	PBFTStage state = 1 ;//状态
+	uint32 m_type = 2;//消息类型
+	uint64 view_id = 3;//该消息类型对应的view_id序列
+	uint64 max_vid = 4;//最大的id
+	repeated google.protobuf.Any vote_contents = 10;
+	
+	string message_uid = 30;//消息的uuid
+	string from_node_name = 31;//从哪个节点名称来的
+	string from_addr = 32;//消息从哪里来的
+	string sign = 100; //对上述数据的签名结果
+}
+
+message PBVoteNodeIdx{//投票决定节点的idx,80%通过才行
+	repeated PMNodeInfo nodes = 1;//所有节点的信息
+	string node_bits_enc = 2;//所有节点的编码信息
+}
+
+

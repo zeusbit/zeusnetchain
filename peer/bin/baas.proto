@@ -1,0 +1,187 @@
+syntax = "proto3";
+
+package org.fc.brewchain.baas.pbgens;
+
+enum PBModule {
+	BOS = 0;
+};
+enum PBCommand {
+	INF = 0; //获取当前状态
+	REG = 1; //注册用户
+	NEW = 2; //插入存证
+	MOD = 3; //更新存证
+	GET = 4; //获取存证
+	ADD = 5; //存证增加用户
+	LST = 6; //获取用户所有存证
+};
+
+message PMFundsInfo{
+	double amount = 1;//金额
+	int64 count = 2;//总数
+	double total_fee = 3 ;//手续费
+	double net_fee = 4;//网络使用费
+	double discount = 5;//折扣
+	string fund_code = 6;//资金类别
+}
+
+message PSRegistry //注册用户
+{
+	string user_name = 1; //user_name
+	string user_id = 2; //user_id，不能重复
+	string metadata = 4 [jstype = JS_NORMAL]; //metadata
+	string org = 5; //所属的机构
+	int32  address_count = 6;//批量生成几个地址
+}
+
+message PRetRegistry //返回注册用户
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	message PMData {
+		string address = 1;//地址
+		string pki = 2;//私钥
+		string pub = 3;//公钥
+		string ripemd160pub = 4;//公钥匙hash
+	}
+	repeated PMData data = 3;
+}
+
+message PSEvidenceCreate {//创建凭据
+	string trade_no = 1; //交易id
+	message PMSigner {//fix by jack
+		string address = 1;
+	}
+	repeated PMSigner signers = 2;
+	string metadata  = 3 [jstype = JS_NORMAL];
+	double amount = 6; 
+	int64 count = 7;
+	string signed_code = 100;//签名字段，暂时不检查
+	repeated PMFundsInfo funds = 200;//
+}
+
+message PRetEvidenceCreate //
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	string bc_hash = 3;//
+	string evidence_id = 4;	
+}
+
+message PSEvidenceModify {//凭据修改
+	string trade_no = 1; //节点列表
+	message PMSigner {
+		string address = 1;
+	}
+	repeated PMSigner signers = 2;
+	string metadata = 3 [jstype = JS_NORMAL];
+	string evidence_id = 4;
+	
+	double amount = 6; //
+	int64 count = 7;
+	string signed_code = 100;//签名字段，暂时不检查
+	repeated PMFundsInfo funds = 200;//
+}
+
+message PRetEvidenceModify //凭据修改返回
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	string bc_hash = 3;//fix by jack
+	string evidence_id = 4;//产生新的交易
+}
+
+message PSEvidenceFind {	//凭据查询
+	string evidence_id = 4;
+}
+
+message PRetEvidenceFind //凭据查询返回
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	message PMData {
+		string trade_no = 1;//fix by jack
+		string evidence_id = 2;
+		string metadata = 3 [jstype = JS_NORMAL];
+		double amount = 4;
+		int64 count = 5;
+		repeated string address = 6;
+
+		string signed_code = 100;//签名字段，暂时不检查//fix by jack
+		
+		repeated PMFundsInfo funds = 200;//
+	}
+	repeated PMData data = 3;
+}
+
+//message PSEvidenceAddUser { //凭据的增加用户
+//	string trade_no = 1;
+//	string evidence_id = 2;
+//	string address = 3;
+//	string metadata = 5[jstype = JS_NORMAL];
+	
+	//message PMSigner {//fix by jack ,由evidence_id可以唯一确定一个交易
+	//	string address = 1;
+	//}
+//	repeated string pre_signers = 10;//上一个签名的用户
+	
+//	string signed_code = 100;//签名字段，暂时不检查
+//}
+
+//message PRetEvidenceAddUser //返回凭据的增加用户
+//{
+//	string err_code = 1; //err_code
+//	string msg = 2; //操作参数
+//	string bc_hash = 3;//fix by jack
+//	string evidence_id = 4;
+//}
+
+
+message PSEvidenceTrans { //转让
+	string trade_no = 1;
+	string evidence_id = 2;
+	string trade_type = 3;//转让类型(资产转移、货币转移、其他转移) fix by jack
+	string metadata = 5[jstype = JS_NORMAL];
+	
+	message PMTransInfo {
+		string address = 1;
+		string metadata = 2 [jstype = JS_NORMAL];//转账附言之类的
+		double amount = 3;//fix by jack
+		int64 count = 4;
+		repeated PMFundsInfo funds = 10;//
+	}
+	
+	repeated PMTransInfo in_infos = 10;//上一组用户信息
+	repeated PMTransInfo out_infos = 20;//下一组用户信息
+	
+	string signed_code = 100;//签名字段，暂时不检查
+}
+
+message PRetEvidenceTrans //转让返回
+{
+	string err_code = 1; 
+	string msg = 2; //操作参数
+	message PMData {
+		string bc_hash = 1;//fix by jack
+		string evidence_id = 2;
+		string address = 3;//fix by jack
+	}
+	repeated PMData data = 3;//fix by jack
+}
+
+message PSEvidenceFindAll {//查询萍聚
+	string address = 1;
+	string signed_code = 100;//签名字段，暂时不检查
+}
+
+message PRetEvidenceFindAll //
+{
+	string err_code = 1; //err_code
+	string msg = 2; //操作参数
+	message PMData {
+		string evidence_id = 1;
+		string metadata = 2 [jstype = JS_NORMAL];
+		repeated PMFundsInfo funds = 200;//
+		repeated string address = 3;
+	}
+	repeated PMData data = 3;
+}
