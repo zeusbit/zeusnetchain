@@ -8,7 +8,7 @@ import org.spongycastle.util.encoders.Hex
 import org.ethereum.crypto.HashUtil
 
 object NodeInstance {
-  val node_name = NodeHelper.getCurrNodeID
+  val node_name = NodeHelper.getCurrNodeName
 
   val kp = {
     val pubkey = NodeHelper.getPropInstance.get("zp.bc.node.pub", "");

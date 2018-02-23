@@ -5,12 +5,14 @@ import java.util.concurrent.atomic.AtomicLong
 import scala.collection.mutable.Set
 import java.math.BigInteger
 import org.fc.brewchain.p22p.exception.NodeInfoDuplicated
+import onight.tfw.mservice.NodeHelper
 
 class PNode(_name: String) extends OLog {
   val name = _name;
   var directNode = Map.empty[String, PNode];
   var directNodeByIdx = Map.empty[Int, PNode];
-  var node_bits = new BigInteger("0")
+  var node_bits = new BigInteger("0").setBit(NodeHelper.getCurrNodeIdx);
+  
   var bits_count = 32; //32*8=256，默认最大网络承载量是256台机器
   var bit_idx: Int = -1;
   val counter = CCSet();

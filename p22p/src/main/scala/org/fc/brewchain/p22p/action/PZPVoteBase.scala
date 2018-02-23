@@ -31,13 +31,13 @@ import org.fc.brewchain.p22p.exception.NodeInfoDuplicated
 
 @NActorProvider
 @Slf4j
-object PZPNodeJoin extends PSMPZP[PSJoin] {
-  override def service = PZPNodeJoinService
+object PZPVoteBase extends PSMPZP[PSJoin] {
+  override def service = PZPVoteBaseService
 }
 
 //
 // http://localhost:8000/fbs/xdn/pbget.do?bd=
-object PZPNodeJoinService extends OLog with PBUtils with LService[PSJoin] with PMNodeHelper {
+object PZPVoteBaseService extends OLog with PBUtils with LService[PSJoin] with PMNodeHelper {
   override def onPBPacket(pack: FramePacket, pbo: PSJoin, handler: CompleteHandler) = {
     log.debug("onPBPacket::" + pbo)
     var ret = PRetJoin.newBuilder();

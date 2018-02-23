@@ -22,11 +22,17 @@ object MessageSender extends NActor with OLog {
   @BeanProperty
   var sockSender: IPacketSender = null;
 
-  def sendMessage(gcmd: String, body: Message, node: LinkNode,cb: CallBack[FramePacket]) {
+  def sendMessage(gcmd: String, body: Message, node: LinkNode, cb: CallBack[FramePacket]) {
     val pack = PacketHelper.buildFromBody(body, gcmd);
     pack.putHeader(PackHeader.PACK_TO, node.name);
+    pack.putHeader(PackHeader.PACK_TO_IDX, "" + node.node_idx);
     pack.putHeader(PackHeader.PACK_URI, node.uri);
     sockSender.asyncSend(pack, cb)
+  }
+
+  def dropNode(node: LinkNode) {
+    sockSender.tryDropConnection("" + node.node_idx);
+    sockSender.tryDropConnection(node.name);
   }
 }
 

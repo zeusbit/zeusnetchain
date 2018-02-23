@@ -10,6 +10,7 @@ enum PCommand {
 	JIN = 0; //申请加入节点集群
 	SWX = 1; //获取节点的拓扑
 	SET = 2; //更新节点信息
+	INF = 3;//获取当前节点信息
 };
 
 message PMNodeInfo{
@@ -42,6 +43,24 @@ message PRetJoin{//加入的返回信息
 	string sign = 100;//对上述数据的签名结果
 }
 
+
+message PSNodeInfo{//加入
+	string req_token = 1;//是否获取拓扑信息
+}
+
+message PRetNodeInfo{//加入的返回信息
+	int32 ret_code = 1;//返回
+	string ret_message = 2;//返回信息
+
+	PMNodeInfo current = 4;//本节点信息
+	
+	repeated PMNodeInfo pendings = 5;//交换一下我知道的节点信息
+	
+	repeated PMNodeInfo nodes = 6;//交换一下我知道的节点信息
+	
+	string sign = 100;//对上述数据的签名结果
+}
+
 message PBSwitchNodes{	//交换我所知道的节点信息
 	repeated PMNodeInfo  nodes = 1;//所有节点的信息
 	PMNodeInfo my_info = 2;
@@ -52,7 +71,7 @@ enum PBFTStage{
 	PRE_PREPARE = 0;
 	PREPARE = 1;
 	COMMIT = 2;
-	REPLAY = 3;
+	REPLY = 3;
 }
 
 message PVBase{

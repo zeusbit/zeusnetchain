@@ -28,47 +28,33 @@ import java.net.URL
 import org.fc.brewchain.p22p.pbgens.P22P.PMNodeInfo
 import org.fc.brewchain.p22p.action.PMNodeHelper
 import org.fc.brewchain.p22p.exception.NodeInfoDuplicated
+import org.fc.brewchain.p22p.pbgens.P22P.PSNodeInfo
+import org.fc.brewchain.p22p.pbgens.P22P.PRetNodeInfo
 
 @NActorProvider
 @Slf4j
-object PZPNodeJoin extends PSMPZP[PSJoin] {
-  override def service = PZPNodeJoinService
+object PZPNodeInfo extends PSMPZP[PSNodeInfo] {
+  override def service = PZPNodeInfoService
 }
 
 //
 // http://localhost:8000/fbs/xdn/pbget.do?bd=
-object PZPNodeJoinService extends OLog with PBUtils with LService[PSJoin] with PMNodeHelper {
-  override def onPBPacket(pack: FramePacket, pbo: PSJoin, handler: CompleteHandler) = {
+object PZPNodeInfoService extends OLog with PBUtils with LService[PSNodeInfo] with PMNodeHelper {
+  override def onPBPacket(pack: FramePacket, pbo: PSNodeInfo, handler: CompleteHandler) = {
     log.debug("onPBPacket::" + pbo)
-    var ret = PRetJoin.newBuilder();
+    var ret = PRetNodeInfo.newBuilder();
     try {
       //       pbo.getMyInfo.getNodeName
-      val from = pbo.getMyInfo;
-      if (pbo.getOp == PSJoin.Operation.MANU_DISCOVER) {
-        val _urlcheck = new URL(from.getProtocol + "://" + from.getAddress + ":" + from.getPort)
-        if ((from.getNodeIdx > 0 && from.getNodeIdx == NodeInstance.curnode.node_idx) ||
-          StringUtils.equalsAnyIgnoreCase(from.getNodeName, NodeInstance.curnode.name)) {
-          log.info("same NodeIdx :" + from.getNodeIdx);
-          throw new NodeInfoDuplicated("NodeIdx=" + from.getNodeIdx);
-        } else {
-          val n = new LinkNode(from.getProtocol, from.getNodeName, from.getAddress, // 
-            from.getPort, from.getStartupTime, from.getPubKey, from.getTryNodeIdx, from.getNodeIdx);
-          log.info("add Pending Node:" + n);
-          NodeInstance.curnode.addPendingNode(n)
-          NodeInstance.curnode.directNode.values.map { _pn =>
-            log.debug("directnodes==" + _pn)
-            ret.addNodes(toPMNode(_pn));
-          }
-
-        }
-      } else if (pbo.getOp == PSJoin.Operation.NODE_CONNECT) {
-        NodeInstance.curnode.addPendingNode(new LinkNode(from.getProtocol, from.getNodeName, from.getAddress, // 
-          from.getPort, from.getStartupTime, from.getPubKey, from.getTryNodeIdx, from.getNodeIdx))
+      ret.setCurrent(toPMNode(NodeInstance.curnode))
+      log.debug("pending="+NodeInstance.curnode.pendingNodes.size+"::"+NodeInstance.curnode.pendingNodes)
+      //      ret.addNodes(toPMNode(NodeInstance.curnode));
+      NodeInstance.curnode.pendingNodes.values.map {  _pn =>
+        log.debug("pending=="+_pn)
+        ret.addPendings(toPMNode(_pn));
       }
-
-      ret.addNodes(toPMNode(NodeInstance.curnode));
-
-      NodeInstance.curnode.directNode.mapValues { _pn =>
+      NodeInstance.curnode.directNode.values.map { _pn =>
+        
+        log.debug("directnodes=="+_pn)
         ret.addNodes(toPMNode(_pn));
       }
     } catch {
@@ -90,5 +76,5 @@ object PZPNodeJoinService extends OLog with PBUtils with LService[PSJoin] with P
     }
   }
   //  override def getCmds(): Array[String] = Array(PWCommand.LST.name())
-  override def cmd: String = PCommand.JIN.name();
+  override def cmd: String = PCommand.INF.name();
 }
