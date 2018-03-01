@@ -12,7 +12,7 @@ object TestMemGraphy extends OLog {
     val nodeCount = 100;
     val nodes = new ListBuffer[PNode]();
     for (i <- 1 to nodeCount) {
-      nodes.+=(new PNode("a" + i));
+      nodes.+=(new PNode("a" + i,i));
     }
     nodes.map { node =>
       nodes.map { f1 =>

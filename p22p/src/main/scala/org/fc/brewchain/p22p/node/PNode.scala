@@ -7,14 +7,14 @@ import java.math.BigInteger
 import org.fc.brewchain.p22p.exception.NodeInfoDuplicated
 import onight.tfw.mservice.NodeHelper
 
-class PNode(_name: String) extends OLog {
+class PNode(_name: String,_bit_idx:Int) extends OLog {
   val name = _name;
   var directNode = Map.empty[String, PNode];
   var directNodeByIdx = Map.empty[Int, PNode];
-  var node_bits = new BigInteger("0").setBit(NodeHelper.getCurrNodeIdx);
+  var node_bits = new BigInteger("0");
   
   var bits_count = 32; //32*8=256，默认最大网络承载量是256台机器
-  var bit_idx: Int = -1;
+  var node_idx: Int = _bit_idx;
   val counter = CCSet();
   def getDiv(n: Int): (Int, Int) = {
     val d: Int = Math.sqrt(n.asInstanceOf[Double]).asInstanceOf[Int];
@@ -37,12 +37,12 @@ class PNode(_name: String) extends OLog {
     }
     if (!directNode.contains(node.name)) {
       directNode = (directNode + (node.name -> node));
-      if (node.bit_idx > 0) {
-        node_bits.setBit(node.bit_idx);
-        directNodeByIdx = (directNodeByIdx + (node.bit_idx -> node));
+      if (node.node_idx > 0) {
+        node_bits.setBit(node.node_idx);
+        directNodeByIdx = (directNodeByIdx + (node.node_idx -> node));
       }
     } else {
-      throw new NodeInfoDuplicated("name=" + node.name + ",bits=" + bit_idx + "@" + name + "/" + bit_idx);
+      throw new NodeInfoDuplicated("name=" + node.name + ",bits=" +node_bits + "@" + name + "/" + node_idx);
     }
   }
   def getRand() = Math.random()

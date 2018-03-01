@@ -13,13 +13,24 @@ import org.fc.brewchain.p22p.pbgens.P22P.PSJoin
 import onight.tfw.otransio.api.beans.FramePacket
 import onight.tfw.async.CallBack
 import org.fc.brewchain.p22p.pbgens.P22P.PRetJoin
+import java.util.concurrent.ScheduledFuture
 
 //投票决定当前的节点
-object LayerNodeTask extends OLog {
+object LayerNodeTask extends OLog with Runnable {
 
   def initTask() {
+    new Thread(this).start();
+  }
+
+  def run() = {
+
+    while (!NodeInstance.isReady()) {
+      Thread.sleep(1000);
+    }
+    log.debug("Starting Node Tasks");
     Scheduler.scheduleWithFixedDelay(JoinNetwork, 5, 60, TimeUnit.SECONDS)
     Scheduler.scheduleWithFixedDelay(VoteNodeMap, 10, 10, TimeUnit.SECONDS)
+
   }
   lazy val currPMNodeInfo = PMNodeInfo.newBuilder().setAddress(NodeInstance.curnode.address) //
     .setNodeName(NodeInstance.curnode.name).setPort(NodeInstance.curnode.port)

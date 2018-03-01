@@ -77,8 +77,9 @@ enum PBFTStage{
 message PVBase{
 	PBFTStage state = 1 ;//状态
 	uint32 m_type = 2;//消息类型
-	uint64 view_id = 3;//该消息类型对应的view_id序列
-	uint64 max_vid = 4;//最大的id
+	uint32 v = 3;//该消息类型对应的view_id序列
+	uint32 max_vid = 4;//最大的id
+	uint32 n = 5;// number
 	repeated google.protobuf.Any vote_contents = 10;
 	
 	string message_uid = 30;//消息的uuid

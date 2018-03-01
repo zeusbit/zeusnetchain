@@ -27,9 +27,22 @@ object Daos extends PSMPZP[Message] {
   @StoreDAO(target = "etcd", daoClass = classOf[OParam])
   @BeanProperty
   var oparam: OParam = null
+
+  @StoreDAO(target = "obdb", daoClass = classOf[OParam])
+  @BeanProperty
+  var odb: OParam = null
+
   def setOparam(daoparam: DomainDaoSupport) {
     if (daoparam != null && daoparam.isInstanceOf[OParam]) {
       oparam = daoparam.asInstanceOf[OParam];
+    } else {
+      log.warn("cannot set OParam from:" + daoparam);
+    }
+  }
+  
+  def setOdb(daoparam: DomainDaoSupport) {
+    if (daoparam != null && daoparam.isInstanceOf[OParam]) {
+      odb = daoparam.asInstanceOf[OParam];
     } else {
       log.warn("cannot set OParam from:" + daoparam);
     }
@@ -42,7 +55,7 @@ object Daos extends PSMPZP[Message] {
   @BeanProperty
   @ActorRequire(name = "http", scope = "global")
   var httpsender: IPacketSender = null;
-  
+
 }
 
 

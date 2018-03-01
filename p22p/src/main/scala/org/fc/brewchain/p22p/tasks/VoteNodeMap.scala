@@ -26,9 +26,13 @@ object VoteNodeMap extends Runnable with OLog with PMNodeHelper {
     Thread.currentThread().setName("VoteNodeMap");
     log.info("CurrentLinkNodes:PendingSize=" + NodeInstance.curnode.pendingNodes.size + ",DirectNodeSize=" + NodeInstance.curnode.directNode.size);
     val vbody = PBVoteNodeIdx.newBuilder();
+    if(NodeInstance.curnode.node_bits.longValue()==0){
+       NodeInstance.curnode.node_bits=NodeInstance.curnode.node_bits.setBit(NodeInstance.curnode.node_idx)
+    }
     var bits = NodeInstance.curnode.node_bits;
+    
     val votebody = PBVoteNodeIdx.newBuilder(); //
-
+    
     NodeInstance.curnode.pendingNodes.values.map(n =>
       if (bits.testBit(n.try_node_idx)) {
         log.debug("error in try_node_idx @n=" + n.name + ",try=" + n.try_node_idx + ",bits=" + bits);
@@ -56,7 +60,7 @@ object VoteNodeMap extends Runnable with OLog with PMNodeHelper {
 
     Thread.sleep((Math.random() * 10000).asInstanceOf[Int]);
 
-    log.debug("LayerNodeTask:Run-----[END]"); //256台机器，
+    log.debug("LayerNodeTask:Run-----[END]"); //
   }
   //Scheduler.scheduleWithFixedDelay(new Runnable, initialDelay, delay, unit)
   def main(args: Array[String]): Unit = {

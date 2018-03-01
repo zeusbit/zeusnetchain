@@ -29,7 +29,14 @@ object MessageSender extends NActor with OLog {
     pack.putHeader(PackHeader.PACK_URI, node.uri);
     sockSender.asyncSend(pack, cb)
   }
-
+  def postMessage(gcmd: String, body: Message, node: LinkNode) {
+    val pack = PacketHelper.buildFromBody(body, gcmd);
+    pack.putHeader(PackHeader.PACK_TO, node.name);
+    pack.putHeader(PackHeader.PACK_TO_IDX, "" + node.node_idx);
+    pack.putHeader(PackHeader.PACK_URI, node.uri);
+    sockSender.post(pack)
+  }
+  
   def dropNode(node: LinkNode) {
     sockSender.tryDropConnection("" + node.node_idx);
     sockSender.tryDropConnection(node.name);

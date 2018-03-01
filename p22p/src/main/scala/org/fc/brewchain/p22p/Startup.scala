@@ -10,15 +10,16 @@ import org.fc.brewchain.p22p.node.NodeInstance
 import org.fc.brewchain.bcapi.URLHelper
 
 @NActorProvider
-object Startup extends SessionModules[Message]   {
+object Startup extends SessionModules[Message] {
 
   @Validate
   def init() {
     System.setProperty("java.protocol.handler.pkgs", "org.fc.brewchain.url");
-    
+
     log.info("startup:" + NodeInstance.curnode.getName);
 
     LayerNodeTask.initTask();
+    
     log.info("tasks inited....[OK]");
   }
 
