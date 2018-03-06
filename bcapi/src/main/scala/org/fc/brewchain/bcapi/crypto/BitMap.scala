@@ -1,4 +1,4 @@
-package org.fc.brewchain.bcapi.crypto
+  package org.fc.brewchain.bcapi.crypto
 
 import java.math.BigInteger
 import org.apache.commons.lang3.StringUtils
@@ -9,7 +9,7 @@ import org.spongycastle.util.encoders.Hex
 object BitMap {
 
   val StrMapping = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789".toCharArray();
-  val radix = StrMapping.length;
+    val radix = StrMapping.length;
   val modx = new BigInteger("" + radix);
 
   def hexToInt(ch: Char): Int = {
@@ -77,12 +77,13 @@ object BitMap {
      val hexstr = "6647dccf7908a611dd50fa74548afd94164be77dcb9a7e455e8543c500ed7258";
 //    val hexstr = "100A";
 
-    val bi = new BigInteger(hexstr, 16);
+    var bi = new BigInteger("0");
+    bi=bi.setBit(215);
     println("bi=" + bi.toString(16));
     println("biequal::" + StringUtils.equalsIgnoreCase(bi.toString(16), hexstr) + ":len=" + hexstr.length() + "==>" + bi.bitCount())
     val bix = hexToMapping(bi);
     println("bix::" + bix);
-    val bistr = mapToBigInt(bix);
+    val bistr = mapToBigInt("aeXcre1pX4uk1Dab1rA8WQfOETRrPe");
     println("bistr=" + bistr.toString(16));
     println("biequal::" + StringUtils.equalsIgnoreCase(bistr.toString(16), (hexstr)) + ":len=" + hexstr.length())
 
