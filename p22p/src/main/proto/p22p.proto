@@ -11,6 +11,7 @@ enum PCommand {
 	SWX = 1; //获取节点的拓扑
 	SET = 2; //更新节点信息
 	INF = 3;//获取当前节点信息
+	VOT = 4;//PBFT投票
 };
 
 message PMNodeInfo{

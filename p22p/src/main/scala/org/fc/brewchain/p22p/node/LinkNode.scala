@@ -4,10 +4,13 @@ import org.fc.brewchain.p22p.exception.NodeInfoDuplicated
 import java.net.URL
 import org.apache.commons.lang3.StringUtils
 import onight.tfw.mservice.NodeHelper
+import com.google.protobuf.MessageOrBuilder
+import org.fc.brewchain.p22p.core.MessageSender
+import com.google.protobuf.Message
 
 class LinkNode(_protocol: String, name: String, _address: String, _port: Int, _startup_time: Long = System.currentTimeMillis(), //
-  _pub_key: String = null, _try_node_idx: Int = NodeHelper.getCurrNodeIdx,_bit_index:Int=0) //
-    extends PNode(name,_bit_index) {
+  _pub_key: String = null, _try_node_idx: Int = NodeHelper.getCurrNodeIdx, _bit_index: Int = 0) //
+    extends PNode(name, _bit_index) {
 
   var pendingNodes = Map.empty[String, LinkNode];
   val protocol: String = _protocol;
@@ -16,7 +19,7 @@ class LinkNode(_protocol: String, name: String, _address: String, _port: Int, _s
   val startup_time = _startup_time; //启动时间
   val pub_key = _pub_key; //该节点的公钥
   var try_node_idx = _try_node_idx; //节点的随机id
-//  var node_idx = _node_idx; //全网确定之后的节点id
+  //  var node_idx = _node_idx; //全网确定之后的节点id
   val uri = protocol + "://" + address + ":" + port;
 
   def addPendingNode(node: LinkNode) {
@@ -28,7 +31,7 @@ class LinkNode(_protocol: String, name: String, _address: String, _port: Int, _s
         throw new NodeInfoDuplicated("directNode exists Pending name=" + node.name + "@" + name);
       }
       pendingNodes = (pendingNodes + (node.name -> node));
-      log.debug("addpending:"+pendingNodes.size+",p="+pendingNodes)
+      log.debug("addpending:" + pendingNodes.size + ",p=" + pendingNodes)
     }
   }
   def isLocal() = (NodeInstance.curnode == this)
@@ -36,12 +39,12 @@ class LinkNode(_protocol: String, name: String, _address: String, _port: Int, _s
   override def toString(): String = {
     "LinkNode(" + uri + "," + startup_time + "," + pub_key + "," + try_node_idx + "," + node_idx + ",)@" + this.hashCode()
   }
-  override def processMessage(msg: String, from: String) = {
+  override def processMessage(gcmd: String, msg: Message, from: PNode) = {
     if (isLocal()) {
       log.debug("proc Local message");
     } else {
       log.debug("need to Send Message");
-
+      MessageSender.postMessage(gcmd, msg, this); //(gcmd, body, node, cb)
     }
   }
   def equals(v: LinkNode): Boolean = {

@@ -6,13 +6,15 @@ import scala.collection.mutable.Set
 import java.math.BigInteger
 import org.fc.brewchain.p22p.exception.NodeInfoDuplicated
 import onight.tfw.mservice.NodeHelper
+import com.google.protobuf.MessageOrBuilder
+import com.google.protobuf.Message
 
-class PNode(_name: String,_bit_idx:Int) extends OLog {
+class PNode(_name: String, _bit_idx: Int) extends OLog {
   val name = _name;
   var directNode = Map.empty[String, PNode];
   var directNodeByIdx = Map.empty[Int, PNode];
   var node_bits = new BigInteger("0");
-  
+
   var bits_count = 32; //32*8=256，默认最大网络承载量是256台机器
   var node_idx: Int = _bit_idx;
   val counter = CCSet();
@@ -42,19 +44,20 @@ class PNode(_name: String,_bit_idx:Int) extends OLog {
         directNodeByIdx = (directNodeByIdx + (node.node_idx -> node));
       }
     } else {
-      throw new NodeInfoDuplicated("name=" + node.name + ",bits=" +node_bits + "@" + name + "/" + node_idx);
+      throw new NodeInfoDuplicated("name=" + node.name + ",bits=" + node_bits + "@" + name + "/" + node_idx);
     }
   }
   def getRand() = Math.random()
 
-  def processMessage(msg: String, from: String) = {
+  def processMessage(gcmd: String, msg: Message, from: PNode) = {
     log.debug("procMessage:" + msg + ",size=" + "@" + name + ",from=" + from);
   }
-  def forwardMessage(msg: String, ranSets: Iterable[String] = Set.empty[String], from: String) {
+
+  def forwardMessage(gcmd: String, msg: Message, ranSets: Iterable[String] = Set.empty[String], from: PNode = this) {
 
     if (name != "root") {
       counter.recv.incrementAndGet();
-      processMessage(msg, from);
+      processMessage(gcmd, msg, from);
     }
     if (ranSets.size > 2) {
       val div = getDiv(ranSets.size);
@@ -79,7 +82,7 @@ class PNode(_name: String,_bit_idx:Int) extends OLog {
         directNode.get(ns._2._1) match {
           case Some(node: PNode) =>
             counter.send.incrementAndGet();
-            node.forwardMessage(msg, ns._2._2, name)
+            node.forwardMessage(gcmd, msg, ns._2._2, from)
           case None =>
             log.debug("unknow nodeName=" + ns._2._1)
         }
@@ -89,7 +92,7 @@ class PNode(_name: String,_bit_idx:Int) extends OLog {
         directNode.get(nodename) match {
           case Some(node: PNode) =>
             counter.send.incrementAndGet();
-            node.forwardMessage(msg, Set.empty, name)
+            node.forwardMessage(gcmd, msg, Set.empty, from)
           case None =>
             log.debug("unknow nodeName=" + nodename)
         }

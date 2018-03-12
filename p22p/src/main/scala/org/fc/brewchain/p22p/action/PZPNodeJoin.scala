@@ -44,13 +44,20 @@ object PZPNodeJoinService extends OLog with PBUtils with LService[PSJoin] with P
     try {
       //       pbo.getMyInfo.getNodeName
       val from = pbo.getMyInfo;
-      if (pbo.getOp == PSJoin.Operation.MANU_DISCOVER) {
+      if (pbo.getOp == PSJoin.Operation.NODE_CONNECT) {
         val _urlcheck = new URL(from.getProtocol + "://" + from.getAddress + ":" + from.getPort)
         if ((from.getNodeIdx > 0 && from.getNodeIdx == NodeInstance.curnode.node_idx) ||
           StringUtils.equalsAnyIgnoreCase(from.getNodeName, NodeInstance.curnode.name)) {
           log.info("same NodeIdx :" + from.getNodeIdx);
           throw new NodeInfoDuplicated("NodeIdx=" + from.getNodeIdx);
-        } else {
+        } else
+        if(NodeInstance.curnode.node_bits.testBit(from.getTryNodeIdx))
+        {
+           log.info("nodebits duplicated NodeIdx :" + from.getNodeIdx);
+           throw new NodeInfoDuplicated("NodeIdx=" + from.getNodeIdx);
+        }
+        else
+        {
           val n = new LinkNode(from.getProtocol, from.getNodeName, from.getAddress, // 
             from.getPort, from.getStartupTime, from.getPubKey, from.getTryNodeIdx, from.getNodeIdx);
           log.info("add Pending Node:" + n);
@@ -62,8 +69,8 @@ object PZPNodeJoinService extends OLog with PBUtils with LService[PSJoin] with P
 
         }
       } else if (pbo.getOp == PSJoin.Operation.NODE_CONNECT) {
-        NodeInstance.curnode.addPendingNode(new LinkNode(from.getProtocol, from.getNodeName, from.getAddress, // 
-          from.getPort, from.getStartupTime, from.getPubKey, from.getTryNodeIdx, from.getNodeIdx))
+//        NodeInstance.curnode.addPendingNode(new LinkNode(from.getProtocol, from.getNodeName, from.getAddress, // 
+//          from.getPort, from.getStartupTime, from.getPubKey, from.getTryNodeIdx, from.getNodeIdx))
       }
 
       ret.addNodes(toPMNode(NodeInstance.curnode));
@@ -74,6 +81,7 @@ object PZPNodeJoinService extends OLog with PBUtils with LService[PSJoin] with P
     } catch {
       case fe: NodeInfoDuplicated => {
         ret.clear();
+        ret.addNodes(toPMNode(NodeInstance.curnode));
         ret.setRetCode(-1).setRetMessage(fe.getMessage)
       }
       case e: FBSException => {

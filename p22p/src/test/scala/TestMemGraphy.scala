@@ -5,6 +5,8 @@ import onight.oapi.scala.traits.OLog
 import scala.collection.mutable.ListBuffer
 import java.math.BigInteger
 import org.fc.brewchain.bcapi.crypto.BitMap
+import org.fc.brewchain.p22p.pbgens.P22P.PVBase
+import onight.tfw.outils.serialize.UUIDGenerator
 
 object TestMemGraphy extends OLog {
 
@@ -22,9 +24,10 @@ object TestMemGraphy extends OLog {
 
     var start = System.currentTimeMillis();
     val sendcc = 1;
+    val msg = PVBase.newBuilder().setMessageUid(UUIDGenerator.generate()).build()
     for (i <- 1 to sendcc) {
       val node = nodes((Math.random() * nodeCount % nodeCount).asInstanceOf[Int]);
-      node.forwardMessage("test", node.directNode.keys, node.name);
+      node.forwardMessage("aaa",msg, node.directNode.keys, node);
     }
     log.debug("cost=" + (System.currentTimeMillis() - start))
     val totalrecv = nodes.foldLeft(0L)(_ + _.counter.recv.get)
@@ -34,13 +37,13 @@ object TestMemGraphy extends OLog {
     }
     println("totalSend:" + totalsend + ",totalrecv=" + totalrecv);
 
-    var node_bits = new BigInteger("10")
+    var node_bits = new BigInteger("0")
     println(node_bits.toString() + "==>" + node_bits.testBit(2));
     
-    val node_bits1 = node_bits.setBit(100);
+    val node_bits1 = node_bits.setBit(100).setBit(1).setBit(12).setBit(0);
     
     println(node_bits1.toString(16) + "==>" + node_bits1.testBit(100)+"==>"+BitMap.hexToMapping(node_bits1));
-    println(node_bits.toString() + "==>" + node_bits.testBit(100));
+    println(node_bits1.bitCount()+","+node_bits1.bitLength());
 
   }
 }

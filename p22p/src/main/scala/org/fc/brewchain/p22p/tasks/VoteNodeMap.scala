@@ -18,6 +18,9 @@ import org.apache.felix.framework.URLHandlers
 import org.fc.brewchain.bcapi.URLHelper
 import org.fc.brewchain.p22p.action.PMNodeHelper
 import org.fc.brewchain.bcapi.crypto.BitMap
+import org.fc.brewchain.p22p.pbgens.P22P.PVBase
+import org.fc.brewchain.p22p.pbgens.P22P.PBFTStage
+import org.fc.brewchain.p22p.node.ViewState
 
 //投票决定当前的节点
 object VoteNodeMap extends Runnable with OLog with PMNodeHelper {
@@ -25,37 +28,36 @@ object VoteNodeMap extends Runnable with OLog with PMNodeHelper {
     log.debug("VoteNodeMap :Run----Try to Vote Node Maps");
     Thread.currentThread().setName("VoteNodeMap");
     log.info("CurrentLinkNodes:PendingSize=" + NodeInstance.curnode.pendingNodes.size + ",DirectNodeSize=" + NodeInstance.curnode.directNode.size);
+    val vbase = PVBase.newBuilder();
     val vbody = PBVoteNodeIdx.newBuilder();
+    vbase.setState(PBFTStage.PRE_PREPARE)
+    vbase.setMType(0)
+//    vbase.setMaxVid(value)
+    vbase.setN(ViewState.nextN())
+    vbase.setV(ViewState.curV());
+    
+    vbase.setFromAddr(NodeInstance.curnode.uri)
+    vbase.setFromNodeName(NodeInstance.curnode.name)
+    
+    
+//    vbase.addVoteContents(vbody);
     if(NodeInstance.curnode.node_bits.longValue()==0){
        NodeInstance.curnode.node_bits=NodeInstance.curnode.node_bits.setBit(NodeInstance.curnode.node_idx)
     }
     var bits = NodeInstance.curnode.node_bits;
-    
-    val votebody = PBVoteNodeIdx.newBuilder(); //
     
     NodeInstance.curnode.pendingNodes.values.map(n =>
       if (bits.testBit(n.try_node_idx)) {
         log.debug("error in try_node_idx @n=" + n.name + ",try=" + n.try_node_idx + ",bits=" + bits);
       } else { //no pub keys
         bits = bits.setBit(n.try_node_idx);
-        votebody.addNodes(toPMNode(n));
+        vbody.addNodes(toPMNode(n));
       })
 
-    votebody.setNodeBitsEnc(BitMap.hexToMapping(bits))
-    log.info("vote -- Nodes:" + votebody);
-    NodeInstance.curnode.directNode.values.map { pn =>
-      val n = pn.asInstanceOf[LinkNode];
-      MessageSender.sendMessage("Vote PZP", votebody.build(), n, new CallBack[FramePacket] {
-        def onSuccess(fp: FramePacket) = {
-          log.debug("send JINPZP success:to " + n.uri + ",body=" + fp.getBody)
-          val retjoin = PRetJoin.newBuilder().mergeFrom(fp.getBody);
-          log.debug("get nodes:" + retjoin);
-        }
-        def onFailed(e: java.lang.Exception, fp: FramePacket) {
-
-        }
-      });
-    }
+    vbody.setNodeBitsEnc(BitMap.hexToMapping(bits))
+    
+    log.info("vote -- Nodes:" + vbody);
+    NodeInstance.forwardMessage("VOTPZP", vbody.build());
     //vbody.setNodeBitsEnc(bits.toString(16));
 
     Thread.sleep((Math.random() * 10000).asInstanceOf[Int]);

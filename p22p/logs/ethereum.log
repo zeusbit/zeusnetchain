@@ -1,202 +1,402 @@
-12:06:23.071 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a28,from=a28
-12:06:23.093 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a64,from=a28
-12:06:23.094 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a35,from=a64
-12:06:23.094 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a21,from=a35
-12:06:23.094 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a42,from=a21
-12:06:23.094 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a98,from=a35
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a30,from=a98
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a31,from=a64
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a65,from=a31
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a84,from=a65
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a47,from=a31
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a33,from=a47
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a45,from=a28
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a2,from=a45
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a44,from=a2
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a1,from=a44
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a99,from=a2
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a69,from=a99
-12:06:23.095 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a34,from=a45
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a40,from=a34
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a93,from=a40
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a36,from=a34
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a8,from=a36
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a75,from=a28
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a38,from=a75
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a19,from=a38
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a10,from=a19
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a39,from=a38
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a80,from=a39
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a43,from=a75
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a87,from=a43
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a96,from=a87
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a27,from=a43
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a61,from=a27
-12:06:23.096 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a97,from=a28
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a11,from=a97
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a91,from=a11
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a37,from=a91
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a78,from=a11
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a57,from=a78
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a58,from=a97
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a16,from=a58
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a54,from=a16
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a71,from=a58
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a88,from=a71
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a17,from=a28
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a46,from=a17
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a66,from=a46
-12:06:23.097 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a90,from=a66
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a6,from=a46
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a67,from=a6
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a22,from=a17
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a83,from=a22
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a29,from=a83
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a70,from=a22
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a7,from=a70
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a92,from=a28
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a26,from=a92
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a68,from=a26
-12:06:23.098 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a81,from=a68
-12:06:23.099 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a52,from=a26
-12:06:23.099 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a77,from=a52
-12:06:23.099 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a82,from=a92
-12:06:23.099 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a5,from=a82
-12:06:23.099 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a100,from=a5
-12:06:23.099 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a23,from=a82
-12:06:23.099 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a56,from=a23
-12:06:23.099 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a60,from=a28
-12:06:23.099 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a32,from=a60
-12:06:23.100 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a55,from=a32
-12:06:23.100 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a18,from=a55
-12:06:23.100 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a24,from=a32
-12:06:23.100 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a53,from=a24
-12:06:23.100 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a94,from=a60
-12:06:23.100 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a51,from=a94
-12:06:23.100 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a48,from=a51
-12:06:23.100 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a74,from=a94
-12:06:23.100 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a25,from=a74
-12:06:23.101 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a41,from=a28
-12:06:23.101 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a86,from=a41
-12:06:23.101 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a13,from=a86
-12:06:23.101 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a50,from=a13
-12:06:23.101 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a95,from=a86
-12:06:23.101 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a79,from=a95
-12:06:23.101 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a20,from=a41
-12:06:23.101 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a63,from=a20
-12:06:23.101 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a14,from=a63
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a3,from=a20
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a4,from=a3
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a59,from=a28
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a73,from=a59
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a15,from=a73
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a9,from=a15
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a62,from=a73
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a72,from=a62
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a49,from=a59
-12:06:23.102 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a89,from=a49
-12:06:23.103 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a76,from=a89
-12:06:23.103 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a85,from=a49
-12:06:23.103 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a12,from=a85
-12:06:23.103 DEBUG [TestMemGraphy$]  cost=256
-12:12:40.399 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a61,from=a61
-12:12:40.417 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a17,from=a61
-12:12:40.417 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a47,from=a17
-12:12:40.417 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a65,from=a47
-12:12:40.418 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a42,from=a65
-12:12:40.418 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a98,from=a47
-12:12:40.418 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a33,from=a98
-12:12:40.418 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a31,from=a17
-12:12:40.418 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a29,from=a31
-12:12:40.418 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a84,from=a29
-12:12:40.418 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a6,from=a31
-12:12:40.418 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a21,from=a6
-12:12:40.418 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a28,from=a61
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a36,from=a28
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a92,from=a36
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a1,from=a92
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a44,from=a36
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a81,from=a44
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a2,from=a28
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a8,from=a2
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a69,from=a8
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a99,from=a2
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a77,from=a99
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a97,from=a61
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a71,from=a97
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a19,from=a71
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a10,from=a19
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a39,from=a71
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a88,from=a39
-12:12:40.419 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a43,from=a97
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a87,from=a43
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a96,from=a87
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a27,from=a43
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a91,from=a27
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a60,from=a61
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a11,from=a60
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a53,from=a11
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a37,from=a53
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a78,from=a11
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a57,from=a78
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a58,from=a60
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a16,from=a58
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a54,from=a16
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a24,from=a58
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a18,from=a24
-12:12:40.420 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a41,from=a61
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a46,from=a41
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a66,from=a46
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a90,from=a66
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a86,from=a46
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a13,from=a86
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a22,from=a41
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a83,from=a22
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a67,from=a83
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a70,from=a22
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a7,from=a70
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a59,from=a61
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a82,from=a59
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a76,from=a82
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a68,from=a76
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a23,from=a82
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a56,from=a23
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a49,from=a59
-12:12:40.421 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a52,from=a49
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a100,from=a52
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a26,from=a49
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a5,from=a26
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a45,from=a61
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a94,from=a45
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a40,from=a94
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a93,from=a40
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a74,from=a94
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a25,from=a74
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a34,from=a45
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a51,from=a34
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a48,from=a51
-12:12:40.422 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a32,from=a34
-12:12:40.423 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a55,from=a32
-12:12:40.423 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a75,from=a61
-12:12:40.423 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a20,from=a75
-12:12:40.423 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a4,from=a20
-12:12:40.423 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a50,from=a4
-12:12:40.423 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a95,from=a20
-12:12:40.423 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a14,from=a95
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a38,from=a75
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a63,from=a38
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a80,from=a63
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a3,from=a38
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a79,from=a3
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a64,from=a61
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a85,from=a64
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a15,from=a85
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a9,from=a15
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a62,from=a85
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a72,from=a62
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a73,from=a64
-12:12:40.424 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a89,from=a73
-12:12:40.425 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a30,from=a89
-12:12:40.425 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a35,from=a73
-12:12:40.425 DEBUG [o.f.b.p.PNode]  procMessage:test,size=@a12,from=a35
-12:12:40.425 DEBUG [TestMemGraphy$]  cost=259
+14:17:57.598 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a27,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.623 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a17,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.623 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a46,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.624 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a83,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.625 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a90,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.625 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a31,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.625 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a29,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.627 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a22,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.627 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a6,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.627 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a42,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.627 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a70,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.627 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a66,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.628 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a28,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.628 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a26,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.628 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a68,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.633 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a81,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.633 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a52,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.634 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a77,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.634 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a82,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.634 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a5,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.634 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a100,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.634 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a2,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.635 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a92,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.635 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a97,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.635 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a11,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.635 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a16,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.636 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a54,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.636 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a78,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.636 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a88,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.637 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a58,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.637 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a19,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.637 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a57,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.638 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a71,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.638 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a91,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.638 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a60,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.638 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a32,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.639 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a55,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.639 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a37,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.639 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a24,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.639 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a53,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.640 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a94,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.640 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a51,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.640 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a18,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.640 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a74,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.641 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a25,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.641 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a41,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.641 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a3,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.642 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a4,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.642 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a50,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.642 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a7,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.643 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a67,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.643 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a86,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.643 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a13,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.643 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a14,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.643 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a63,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.644 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a79,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.644 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a59,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.644 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a73,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.645 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a15,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.645 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a9,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.645 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a62,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.645 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a76,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.645 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a49,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.646 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a89,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.646 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a56,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.646 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a23,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.646 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a72,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.646 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a45,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.646 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a36,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.646 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a8,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.647 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a1,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.647 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a40,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.647 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a69,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.647 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a34,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.647 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a44,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.648 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a93,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.648 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a99,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.648 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a48,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.648 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a75,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.648 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a38,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.649 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a87,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.649 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a10,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.649 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a95,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.649 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a80,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.649 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a43,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.650 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a39,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.650 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a96,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.650 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a20,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.651 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a61,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.651 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a64,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.651 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a35,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.651 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a65,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.651 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a84,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.652 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a98,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.652 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a33,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.652 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a85,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.652 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a12,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.652 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a30,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.653 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a47,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.653 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f99016204424f470000"
+,size=@a21,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:17:57.653 DEBUG [TestMemGraphy$]  cost=376
+14:18:04.652 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a77,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.669 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a17,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.670 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a47,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.670 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a65,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.671 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a42,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.671 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a98,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.671 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a33,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.673 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a31,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.673 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a29,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.673 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a84,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.674 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a6,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.674 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a21,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.674 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a28,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.674 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a36,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.674 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a8,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.679 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a1,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.680 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a40,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.680 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a81,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.680 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a2,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.680 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a44,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.680 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a69,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.681 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a99,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.681 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a92,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.681 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a97,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.681 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a71,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.681 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a19,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.682 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a10,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.682 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a39,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.682 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a61,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.682 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a43,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.682 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a87,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.682 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a96,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.683 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a27,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.683 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a91,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.683 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a60,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.683 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a11,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.683 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a88,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.684 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a37,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.684 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a78,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.684 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a57,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.684 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a58,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.684 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a16,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.684 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a54,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.684 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a24,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.685 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a53,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.685 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a41,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.685 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a46,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.685 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a66,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.685 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a90,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.685 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a86,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.685 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a13,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.686 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a22,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.686 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a83,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.686 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a67,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.686 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a70,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.686 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a7,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.687 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a59,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.687 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a82,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.687 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a76,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.687 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a68,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.687 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a23,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.687 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a56,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.687 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a49,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.688 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a52,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.688 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a100,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.688 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a26,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.688 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a5,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.688 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a45,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.688 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a94,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.689 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a55,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.689 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a93,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.689 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a74,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.689 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a48,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.689 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a34,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.690 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a51,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.690 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a18,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.690 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a32,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.690 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a25,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.690 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a75,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.690 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a20,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.691 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a4,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.691 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a50,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.691 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a95,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.691 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a14,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.691 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a38,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.691 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a63,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.691 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a80,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.691 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a3,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.692 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a79,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.692 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a64,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.692 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a85,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.692 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a15,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.692 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a9,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.692 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a62,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.693 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a72,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.693 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a73,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.693 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a89,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.693 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a30,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.693 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a35,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.693 DEBUG [o.f.b.p.n.PNode]  procMessage:message_uid: "7e00808000001f9b016204426aee0000"
+,size=@a12,from=org.fc.brewchain.p22p.node.PNode@60d6d6d4
+14:18:04.693 DEBUG [TestMemGraphy$]  cost=335
