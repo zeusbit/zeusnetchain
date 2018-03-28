@@ -12,6 +12,9 @@ enum PCommand {
 	SET = 2; //更新节点信息
 	INF = 3;//获取当前节点信息
 	VOT = 4;//PBFT投票
+	
+	
+	HBT = 10;//HeartBeat!检查心跳
 };
 
 message PMNodeInfo{
@@ -21,8 +24,14 @@ message PMNodeInfo{
 	int32 port = 4;//端口
 	int64 startup_time = 5;//启动时间
 	string pub_key = 6;//该节点的公钥
-	int32 try_node_idx = 7;//节点的随机id
+	string bcuid = 7;//节点的唯一ID
+	int32 try_node_idx = 8;//节点的随机id
+	string pri_key = 9;//私钥，记得不要再在全网广播
 	int32 node_idx = 10;//全网确定之后的节点id
+	int64 recv_cc = 11;//总收到多少数据
+	int64 send_cc = 12;//总发送多少数据
+	int64 block_cc = 13;//总产生了多少个区块！
+	
 	string sign = 100;//对上述数据的签名结果
 }
 
@@ -39,6 +48,7 @@ message PRetJoin{//加入的返回信息
 	int32 ret_code = 1;//返回
 	string ret_message = 2;//返回信息
 
+	PMNodeInfo my_info = 3;//交换一下我自己的节点信息
 	repeated PMNodeInfo nodes = 4;//交换一下我知道的节点信息
 	
 	string sign = 100;//对上述数据的签名结果
@@ -81,11 +91,10 @@ message PVBase{
 	uint32 v = 3;//该消息类型对应的view_id序列
 	uint32 max_vid = 4;//最大的id
 	uint32 n = 5;// number
-	repeated google.protobuf.Any vote_contents = 10;
+	bytes contents = 10;
 	
 	string message_uid = 30;//消息的uuid
-	string from_node_name = 31;//从哪个节点名称来的
-	string from_addr = 32;//消息从哪里来的
+	string from_bcuid = 31;//从哪个节点名称来的
 	string sign = 100; //对上述数据的签名结果
 }
 

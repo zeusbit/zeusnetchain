@@ -23,12 +23,14 @@ import org.fc.brewchain.p22p.pbgens.P22P.PRetJoin
 import org.fc.brewchain.p22p.PSMPZP
 import org.fc.brewchain.p22p.pbgens.P22P.PCommand
 import org.fc.brewchain.p22p.node.NodeInstance
-import org.fc.brewchain.p22p.node.LinkNode
 import java.net.URL
 import org.fc.brewchain.p22p.pbgens.P22P.PMNodeInfo
 import org.fc.brewchain.p22p.action.PMNodeHelper
 import org.fc.brewchain.p22p.exception.NodeInfoDuplicated
 import org.fc.brewchain.p22p.pbgens.P22P.PVBase
+import onight.tfw.mservice.NodeHelper
+import com.google.protobuf.Any
+import org.fc.brewchain.p22p.pbgens.P22P.PBVoteNodeIdx
 
 @NActorProvider
 @Slf4j
@@ -40,10 +42,14 @@ object PZPVoteBase extends PSMPZP[PVBase] {
 // http://localhost:8000/fbs/xdn/pbget.do?bd=
 object PZPVoteBaseService extends OLog with PBUtils with LService[PVBase] with PMNodeHelper {
   override def onPBPacket(pack: FramePacket, pbo: PVBase, handler: CompleteHandler) = {
-    log.debug("onPBPacket::" + pbo)
+    log.debug("onPBPacket:size=" + pack.genBodyBytes().size + ":" + pack)
     var ret = PRetJoin.newBuilder();
     try {
-      //       pbo.getMyInfo.getNodeName
+      val v = fromByteSting(pbo.getContents, classOf[PBVoteNodeIdx])
+      //      pbo.getVoteContentsList.map { v =>
+      //        val a = v.unpack(classOf[PBVoteNodeIdx]);
+      log.debug("get VoteBase:Info:" + v)
+      //      }
     } catch {
       case fe: NodeInfoDuplicated => {
         ret.clear();
